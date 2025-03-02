@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>API Key Test</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Google Maps API Key Test</h2>
+    <p>If you see a map below, your API key is working correctly.</p>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 17.3850, lng: 78.4867 },
+                zoom: 8
+            });
+            // Add a marker to verify the map is working
+            new google.maps.Marker({
+                position: { lat: 17.3850, lng: 78.4867 },
+                map: map,
+                title: "Test Marker"
+            });
+        }
+    </script>
+    <!-- Use only one script tag with the API key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&callback=initMap"></script>
+</body>
+
+</html>

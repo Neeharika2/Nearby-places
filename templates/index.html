@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Essentials</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Check this line to ensure it's getting the API key properly -->
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&libraries=places"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Nearby Places</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="search-container">
+            <input type="text" id="search-box" placeholder="Enter a location">
+            <select id="place-type">
+                <option value="hospital">Hospitals</option>
+                <option value="police">Police Stations</option>
+                <option value="fire_station">Fire Stations</option>
+                <option value="pharmacy">Pharmacies</option>
+                <option value="restaurant">Restaurants</option>
+                <option value="supermarket">Supermarkets</option>
+                <option value="atm">ATMs</option>
+                <option value="gas_station">Gas Stations</option>
+                <option value="school">Schools</option>
+                <option value="park">Parks</option>
+                <option value="college">Colleges</option>
+            </select>
+            <button id="search-btn">Search</button>
+        </div>
+
+        <div class="main-content">
+            <div id="map-container">
+                <div id="map"></div>
+            </div>
+
+            <div class="places-container">
+                <div id="places-list">
+                    <div class="no-places">Search for locations to see results</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
